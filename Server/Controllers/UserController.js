@@ -1,6 +1,11 @@
 const UserProfile = require('../Schema/ProfileSchema'); // Assuming UserProfile model is in the models folder
 const jwt = require('jsonwebtoken');
 
+
+const Base_URL = process.env.NODE_ENV === 'production' 
+  ? '' // Replace with your actual production URL
+  : `${req.protocol}://${req.get('host')}`;
+
 const createOrUpdateUserProfile = async (req, res) => {
     // Extract token from Authorization header
     const token = req.headers.authorization?.split(" ")[1];
@@ -174,7 +179,7 @@ const getUserProfile = async (req, res) => {
         }
 
         // Create a shareable link to the profile
-        const profileLink = `${req.protocol}://${req.get('host')}/profile/${userProfile._id}`;
+        const profileLink = `${Base_URL}/profile/${userProfile._id}`;
 
         // Return the shareable link and full profile data
         return res.status(200).json({
