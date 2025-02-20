@@ -1,11 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import styles from "../css/Signup.module.css";
 import SparkImg from "../assets/SparkImg.png";
 import SignupImage from "../assets/SignupImage.png";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";  // Import toast styles
-
+import "react-toastify/dist/ReactToastify.css"; // Ensure correct import for styles
 
 const BASE_URL =
   import.meta.env.MODE === "development"
@@ -13,6 +13,7 @@ const BASE_URL =
     : import.meta.env.VITE_PROD_URL;
 
 const Signup = () => {
+  const navigate = useNavigate(); // Initialize navigation
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -21,7 +22,6 @@ const Signup = () => {
     confirmPassword: "",
   });
   const [errors, setErrors] = useState({});
-  const [success, setSuccess] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -29,41 +29,28 @@ const Signup = () => {
 
   const validateForm = () => {
     const newErrors = {};
-
-    // First Name validation
-    if (!formData.firstName) {
-      newErrors.firstName = "First name required*";
-    }
-
-    // Last Name validation
-    if (!formData.lastName) {
-      newErrors.lastName = "Last name required*";
-    }
-
-    // Email validation
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!formData.firstName) newErrors.firstName = "First name required*";
+    if (!formData.lastName) newErrors.lastName = "Last name required*";
     if (!formData.email) {
       newErrors.email = "Email required*";
     } else if (!emailPattern.test(formData.email)) {
       newErrors.email = "Invalid email format*";
     }
-
-    // Password validation
     if (!formData.password) {
       newErrors.password = "Password required*";
     } else if (formData.password.length < 8) {
       newErrors.password = "Password must be at least 8 characters*";
     } else if (!/(?=.*[a-z])/.test(formData.password)) {
-      newErrors.password = "Password must contain at least one lowercase letter*";
+      newErrors.password = "Must contain at least one lowercase letter*";
     } else if (!/(?=.*[A-Z])/.test(formData.password)) {
-      newErrors.password = "Password must contain at least one uppercase letter*";
+      newErrors.password = "Must contain at least one uppercase letter*";
     } else if (!/(?=.*\d)/.test(formData.password)) {
-      newErrors.password = "Password must contain at least one number*";
+      newErrors.password = "Must contain at least one number*";
     } else if (!/(?=.*[!@#$%^&*])/.test(formData.password)) {
-      newErrors.password = "Password must contain at least one special character (!@#$%^&*)*";
+      newErrors.password = "Must contain at least one special character*";
     }
-
-    // Confirm Password validation
     if (formData.password !== formData.confirmPassword) {
       newErrors.confirmPassword = "Passwords do not match*";
     }
@@ -75,22 +62,19 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors({});
-    setSuccess("");
-
+    
     if (!validateForm()) return;
 
     try {
       const response = await axios.post(`${BASE_URL}/auth/signup`, formData);
-      setSuccess(response.data.message);
-      toast.success(response.data.message); // Success toast
+      toast.success(response.data.message, { position: "top-right" }); // Green toast
+      setTimeout(() => navigate("/user"), 2000); // Redirect after 2s
     } catch (err) {
-      setErrors({ general: err.response?.data?.message || "Something went wrong" });
-      toast.error(err.response?.data?.message || "Something went wrong"); // Error toast
+      const errorMsg = err.response?.data?.message || "Something went wrong";
+      setErrors({ general: errorMsg });
+      toast.error(errorMsg, { position: "top-right" }); // Red toast
     }
   };
-
-  console.log(errors); // Debugging: Log the errors state
-  console.log(formData); // Debugging: Log the form data
 
   return (
     <div className={styles.container}>
@@ -164,7 +148,6 @@ const Signup = () => {
           </div>
           
           {errors.general && <p className={styles.error}>{errors.general}</p>}
-          {success && <p className={styles.success}>{success}</p>}
           
           <button type="submit" className={styles.submitBtn}>Create an account</button>
         </form>
@@ -174,7 +157,7 @@ const Signup = () => {
         <img src={SignupImage} alt="Signup Visual" className={styles.signupImg} />
       </div>
 
-      {/* Toast container to display toasts */}
+      {/* Toast container for notifications */}
       <ToastContainer />
     </div>
   );
