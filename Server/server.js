@@ -16,7 +16,7 @@ app.get("/pavan", (req, res) => {
 });
 
 const corsOptions = {
-  origin: ["", "http://localhost:5173"], // URL of your React frontend
+  origin: ["https://link-tree-front-tau.vercel.app", "http://localhost:5173"], // URL of your React frontend
   methods: ["GET", "POST", "PUT", "DELETE"], // HTTP methods allowed
   allowedHeaders: ["Content-Type", "Authorization"],
 };
