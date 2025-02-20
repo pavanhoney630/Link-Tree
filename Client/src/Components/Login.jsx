@@ -5,6 +5,11 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import SparkImg from "../assets/SparkImg.png";  // Ensure correct path and file extension
 import LoginImage from "../assets/SignupImage.png";   // Ensure correct path and file extension
 
+const BASE_URL =
+  process.env.NODE_ENV === "development"
+    ? process.env.REACT_APP_DEV_URL
+    : process.env.REACT_APP_PROD_URL;
+
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -14,7 +19,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/auth/login', {
+      const response = await axios.post(`${BASE_URL}/auth/login`, {
         username,
         password,
       });

@@ -6,6 +6,12 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";  // Import toast styles
 
+
+const BASE_URL =
+  process.env.NODE_ENV === "development"
+    ? process.env.REACT_APP_DEV_URL
+    : process.env.REACT_APP_PROD_URL;
+
 const Signup = () => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -74,7 +80,7 @@ const Signup = () => {
     if (!validateForm()) return;
 
     try {
-      const response = await axios.post("http://localhost:5000/auth/signup", formData);
+      const response = await axios.post(`${BASE_URL}/auth/signup`, formData);
       setSuccess(response.data.message);
       toast.success(response.data.message); // Success toast
     } catch (err) {
