@@ -6,9 +6,10 @@ import SparkImg from "../assets/SparkImg.png";  // Ensure correct path and file 
 import LoginImage from "../assets/SignupImage.png";   // Ensure correct path and file extension
 
 const BASE_URL =
-  process.env.NODE_ENV === "development"
-    ? process.env.REACT_APP_DEV_URL
-    : process.env.REACT_APP_PROD_URL;
+  import.meta.env.MODE === "development"
+    ? import.meta.env.VITE_DEV_URL
+    : import.meta.env.VITE_PROD_URL;
+
 
 const Login = () => {
   const [username, setUsername] = useState('');

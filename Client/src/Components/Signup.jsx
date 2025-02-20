@@ -8,9 +8,9 @@ import "react-toastify/dist/ReactToastify.css";  // Import toast styles
 
 
 const BASE_URL =
-  process.env.NODE_ENV === "development"
-    ? process.env.REACT_APP_DEV_URL
-    : process.env.REACT_APP_PROD_URL;
+  import.meta.env.MODE === "development"
+    ? import.meta.env.VITE_DEV_URL
+    : import.meta.env.VITE_PROD_URL;
 
 const Signup = () => {
   const [formData, setFormData] = useState({
