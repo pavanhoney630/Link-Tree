@@ -1,0 +1,184 @@
+/* UserSelection.module.css */
+
+.userSelectionContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: aliceblue;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.leftSection {
+    flex: 0.3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.middleSection {
+    flex: 0.4;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    margin-left: -40px;
+    margin-top: 40px;
+}
+
+.rightSection {
+    flex: 0.3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo {
+    max-width: 100px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 20px;
+    background: #E0E2D9;
+    border-radius: 4px;
+    width: 100%;
+    border: none;
+    
+}
+
+.categories {
+    margin-bottom: 20px;
+}
+
+.categoryButtons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.categoryButton {
+    display: flex;
+    align-items: center;
+    padding: 5px 16px;
+    border: 1px solid #333;
+    border-radius: 24px;
+    cursor: pointer;
+    color: #333;
+    font-size: 16px;
+    background-color: transparent;
+}
+
+.categoryButton.selected {
+    background-color: #45a049;
+}
+
+.categoryIcon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.continueButton {
+    padding: 15px 30px;
+    background-color: #28a745;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    width: 100%;
+}
+
+.signupImg {
+    max-width: 80%;
+    height: auto;
+    object-fit: cover;
+    margin-top: 20px;
+}
+
+/* ✅ Hide right section (image) from 1024px */
+@media (max-width: 1024px) {
+    .rightSection {
+        display: none;
+    }
+}
+
+/* ✅ Adjust layout from 768px onwards */
+@media (max-width: 768px) {
+    .userSelectionContainer {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 15px;
+    }
+
+    .leftSection {
+        width: 100%;
+        align-items: flex-start; /* Keep Spark image at left */
+        padding: 10px;
+    }
+
+    .middleSection {
+        width: 100%;
+        padding: 10px;
+        margin-left: 0;
+    }
+
+    .categoryButtons {
+        justify-content: flex-start; /* Keep wrapping properly */
+    }
+}
+
+/* ✅ Continue wrapping categories until 300px */
+@media (max-width: 300px) {
+    .categoryButtons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .categoryButton {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+/* ✅ Reduce input width for 768px */
+@media (max-width: 768px) {
+    input {
+        width: 80%;
+    }
+}
+
+/* ✅ Further reduce input width for 500px */
+@media (max-width: 500px) {
+    input {
+        width: 70%;
+        padding: 8px; /* Reduce padding for smaller look */
+    }
+}
+
+/* ✅ Further reduce input width for 300px */
+@media (max-width: 300px) {
+    input {
+        width: 90%; /* Centered but not full width */
+        padding: 6px; /* Smaller padding */
+        font-size: 14px; /* Adjust font size */
+    }
+}

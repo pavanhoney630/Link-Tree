@@ -1,0 +1,291 @@
+/* Signup.module.css */
+
+/* Signup.module.css */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Ensures all sections take full height */
+    padding: 10px;
+    background-color: aliceblue;
+    height: 100vh;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.leftSection, .middleSection, .rightSection {
+    flex: 1;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.leftSection {
+    justify-content: flex-start;
+}
+
+.middleSection {
+    flex: 1;
+    align-items: center;
+    margin-top: 40px;
+    margin-right: 130px;
+     
+}
+
+
+.logo {
+    max-width: 100px;
+    margin-bottom: 20px;
+    align-self: flex-start; /* Positions logo at the top left */
+}
+
+.title {
+    font-size: 34px;
+    text-align: left; /* Aligns the title to the left */
+    margin-bottom: 10px;
+}
+
+.accountCreation {
+    display: flex;
+    justify-content: flex-start; /* Aligns the account creation elements to the left */
+    align-items: center;
+    width: 100%;
+}
+
+h1, h3 {
+    display: inline; /* Ensures h1 and h3 are in one line */
+    margin: 0;
+}
+
+h3 {
+    color: #555;
+    font-size: 15px;
+    margin-left: -20px;
+}
+
+.signInLink {
+    margin-left: 160px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the form elements */
+    width: 100%;
+    max-width: 600px; /* Allows the form to take up more width in the middle section */
+}
+
+.form label {
+    margin-top: 5px; /* Decreases the space between labels and inputs */
+    align-self: flex-start; /* Aligns labels to the left */
+    color: #999;
+}
+
+.form input {
+    padding: 12px; /* Increases the input field height */
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%; /* Makes the input fields take the full width of the form */
+}
+
+.terms {
+    display: flex;
+    text-align: left;
+    align-items: center; /* Aligns checkbox and terms text on the same line */
+    margin-bottom: 10px;
+    font-size: 12px; /* Makes terms text smaller */
+    width: 100%; /* Makes sure terms occupy the full width */
+    max-width: 400px; /* Ensures the terms text and checkbox fit within two lines */
+    justify-content: center; /* Aligns the terms section to the left */
+    gap: 5px; /* Minimizes the gap between the checkbox and the terms text */
+}
+
+.terms label {
+    display: flex;
+    align-items: center; /* Aligns checkbox and terms text on the same line */
+    flex-direction: row; /* Places checkbox before text */
+    gap: 5px; /* Minimizes the gap between the checkbox and the terms text */
+}
+
+.terms input {
+    margin-right: 5px;
+    transform: scale(0.8); /* Scales down the checkbox size */
+}
+
+.terms span {
+    flex-grow: 1; /* Ensures the terms text takes up the remaining space on the same line */
+}
+
+.terms p {
+    margin: 0; /* Removes extra margin from terms text */
+}
+
+.terms a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.terms a:hover {
+    text-decoration: underline;
+}
+
+.error {
+    color: red;
+    margin-bottom: 10px;
+}
+
+.success {
+    color: green;
+    margin-bottom: 10px;
+}
+
+.submitBtn {
+    padding: 12px; /* Increases the button padding */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%; /* Makes the button take the full width of the form */
+}
+
+.submitBtn:hover {
+    background-color: #0056b3;
+}
+/* RIGHT SECTION - Fixing Image Position */
+.signupImg {
+    width: 100%; /* Ensures the image takes up full width */
+    height: 100%; /* Ensures the image takes up full height */
+    display: block;
+    margin: 0;
+}
+
+
+/* For screens between 1024px and 300px */
+@media (max-width: 1024px) {
+    .rightSection {
+        display: none;
+    }
+}
+
+/* Signup.module.css */
+
+/* Adjustments for medium screens (between 1024px and 500px) */
+@media screen and (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 20px;
+    }
+
+    .leftSection, .middleSection {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .middleSection {
+        margin-left: 0;
+        padding: 0 10px;
+    }
+
+    .form {
+        max-width: 80%;
+    }
+
+    .title {
+        font-size: 34px;
+        margin-bottom: 20px;
+    }
+
+    /* Align h1, h3, and signInLink horizontally */
+    .accountCreation {
+        display: flex;
+        flex-direction: row; /* Align h3 and signInLink horizontally */
+        align-items: center; /* Center them vertically */
+        justify-content: center; /* Center horizontally */
+        gap: 20px; /* Add a 20px gap between h3 and signInLink */
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    h1 {
+        display: inline;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        color: #555;
+        font-size: 15px;
+        text-align: center; /* Centers h3 */
+    }
+
+    .signInLink {
+        text-align: center; /* Centers the link */
+    }
+
+    .form input, .submitBtn {
+        padding: 12px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%; /* Makes input take full width of the form */
+    }
+}
+
+/* For screens between 1024px and 500px */
+@media (max-width: 500px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 5px;
+        height: auto;
+    }
+
+    .leftSection, .middleSection {
+        width: 100%;
+        padding: 5px;
+        align-items: flex-end;
+        text-align: right;
+    }
+
+    .middleSection {
+        margin-left: auto;
+        margin-top: 20px;
+    }
+
+    .form {
+        max-width: 90%;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .form input, .submitBtn {
+        padding: 10px;
+    }
+
+    /* Align h3 and signInLink horizontally */
+    .accountCreation {
+        flex-direction: row; /* Align h3 and signInLink horizontally */
+        width: 100%;
+        justify-content: center; /* Centers h3 and signInLink horizontally */
+        gap: 20px; /* Adds space between h3 and signInLink */
+    }
+
+    h3 {
+        margin-bottom: 0; /* Removes bottom margin */
+        text-align: center; /* Centers h3 */
+    }
+
+    .signInLink {
+        text-align: center; /* Centers the sign in link */
+    }
+}

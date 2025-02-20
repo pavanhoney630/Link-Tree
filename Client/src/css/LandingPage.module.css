@@ -1,0 +1,623 @@
+.container {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: aliceblue;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+  }
+  
+  .logoContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 100px;
+    margin-right: 10px;
+  }
+  
+  .marketplaceText {
+    font-size: 1.2rem;
+    margin-left: 10px;
+  }
+  
+  .signupButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 14px;
+    cursor: pointer;
+   
+  }
+  .link {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit the button text color */
+  
+  }
+  .signupButton:hover {
+    background-color: #45a049;
+  }
+  
+  .mainSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Ensure equal height */
+    padding: 50px 30px;
+    margin-top: -60px;
+    margin-left: 60px;
+   
+  }
+  
+  .textContent, .analyticsSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    flex: 1; /* Take equal space */
+  }
+  
+  .textContent {
+    max-width: 50%;
+  }
+  
+  .analyticsSection {
+    max-width: 50%;
+  }
+  
+  .analyticsImg {
+    width: 100%;
+    max-width: 600px;
+    object-fit: cover; /* Ensure the image covers the available space */
+
+    
+  }
+  
+  .mainHeading {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+   
+  }
+  
+  .subheading {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .ctaButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px ;
+    border-radius: 4px;
+    cursor: pointer;
+   border-radius: 10px;
+    width: 150px;
+    margin-top: -25px;
+  }
+  
+  .ctaButton:hover {
+    background-color: #45a049;
+  }
+  
+  /* Revenue Section */
+  
+  .revenueSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Ensure equal height */
+    padding: 50px 20px;
+    margin-top: -150px;
+  }
+  
+  .revenueImageContainer, .revenueDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    flex: 1; /* Take equal space */
+  }
+  
+  .revenueImg {
+    width: 100%;
+    max-width: 600px;
+    object-fit: cover; /* Ensure the image covers the available space */
+  }
+  
+  .revenueDescription {
+    padding-left: 20px;
+  }
+  
+  .revenueDescription h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  .revenueDescription p {
+    font-size: 1.1rem;
+  }
+  
+
+/* Ensure text and image are side by side */
+.bodyContent {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Space out the content */
+    margin-top: -40px; /* Adjust the margin as needed */
+   
+
+  }
+  
+  .bodyTextContainer {
+    flex: 1; /* Take equal space for the text */
+    padding-right: 10px; /* Optional: space between text and image */
+    margin-left: 40px;
+  }
+  
+  .bodyImageWrapper {
+    flex: 1; /* Take equal space for the image */
+    display: flex;
+    justify-content: flex-end; /* Align the image to the right */
+  }
+  
+  .bodyImage {
+    width: 100%;
+    max-width: 500px; /* Adjust the width of the image */
+    border-radius: 10px; /* Optional: add border radius */
+  }
+  
+  /* Ensure image and text start at the same line */
+.testimonialContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .testimonialLeft {
+    flex: 1;
+    margin-left: 30px;
+  }
+  
+  .testimonialRight {
+    flex: 1;
+    text-align: right;
+    margin-left: 10px;
+  }
+  .highlightText {
+    color:  #4CAF50;
+  }
+  .customerImage {
+    width: 100%;
+    max-width: 400px; /* Adjust as needed */
+    border-radius: 10px;
+  }
+  .customerStoriesButton {
+    display: block;
+    margin-top: -10px;
+    padding: 10px 20px;
+    border: 2px solid green;
+    color: green;
+    
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 30px;
+
+  }
+  
+  .testimonialGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 15px;
+    margin-top: 10px;
+    margin-left: -50px;
+  }
+  
+  .testimonialCard {
+    background-color: #f9f9f9;
+    padding: 10px; /* Reduced padding */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 13px;
+    width: 100%; /* Reduced width to make cards smaller */
+    max-width: 520px; /* Maximum width for each card */
+    margin: 0 auto; /* Center the cards */
+
+  }
+  
+  .testimonialCard h3 {
+    font-size: 14px; /* Slightly smaller heading size */
+    margin-bottom: 8px;
+  }
+  
+  .testimonialCard p {
+    font-size: 12px; /* Smaller paragraph text */
+    line-height: 1.4;
+  }
+  
+  .testimonialAuthor {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+  }
+  
+  .authorDot {
+    width: 8px;
+    height: 8px;
+    background-color: green;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  
+  .authorInfo p {
+    font-size: 11px; /* Smaller text for the author info */
+    margin: 0;
+  }
+  
+  .testimonialCard.card1 {
+    background-color: #f1f1f1;
+  }
+  
+  .testimonialCard.card4 {
+    background-color: #f1f1f1;
+  }
+
+/* Footer Section */
+/* Footer Section */
+/* Footer Section */
+.footerSection {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: stretch; /* Stretch child elements */
+}
+
+.footerdiv {
+    display: flex;
+    justify-content: flex-start; /* Align items from the start (left) */
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 50px; /* Adjust spacing between buttons and links */
+}
+
+.authButtons {
+    display: flex;
+    gap: 15px;
+    margin-top: -80px;
+    border-radius: 40px;
+    margin-left: 30px;
+}
+
+/* Title styling */
+.footerTitle {
+    font-size: 24px;
+    margin-bottom: -10px;
+    text-align: left;
+    font-weight: 700;
+}
+
+.footerGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footerItem {
+    width: 30%;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.footerImage {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.footerText {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.footerButtons {
+    display: flex;
+    gap: 15px;
+}
+
+/* Adjust links alignment */
+.footerLinks {
+    display: flex;
+    gap: 20px;
+    margin-left: 135px; /* Moves links slightly left but not fully */
+    justify-content: space-between; /* Aligns towards the left */
+    text-align: left;
+    gap:180px;
+    
+
+    
+}
+
+/* Styling for buttons */
+.footerButtons .loginButton,
+.footerButtons .signupButton {
+    font-weight: bold;
+    color: black;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+/* Hover effect */
+.footerButtons .loginButton:hover,
+.footerButtons .signupButton:hover {
+    background-color: #e0e0e0;
+}
+
+/* Link styles */
+.footerLinks a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black; /* Make links black & bold */
+}
+/* Link Section */
+.linkSection h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.linkSection ul {
+    list-style: none;
+    padding: 0;
+}
+
+.linkSection ul li {
+    margin-bottom: 8px;
+}
+
+.linkSection ul li a {
+    text-decoration: none;
+    color: black; /* Color of links */
+    font-weight: bold;
+}
+
+.Ackndiv {
+    display: flex;
+    justify-content: space-between; /* Pushes items to left & right */
+    align-items: center; /* Keeps vertical alignment */
+    width: 100%; /* Ensures full width */
+    padding: 10px 20px;
+}
+
+.footerAcknowledgment {
+    font-size: 9px;
+    color: #000;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 0; /* Ensures it's fully left */
+}
+
+.footerSocial {
+    display: flex;
+    gap: 15px;
+    color: #333;
+    justify-content: flex-end;
+    margin-right: 0; /* Ensures it's fully right */
+}
+.footerSocial a {
+    color: black; /* Ensures icons are black */
+}
+
+.footerSocial a svg {
+    fill: black; /* Ensures SVG icons are black */
+}
+
+
+.footerSocial a img {
+    width: 32px;
+    height: 32px;
+    color: #333;
+}
+
+.loginButton, .signupButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.loginButton {
+    background-color: #e0e0e0;
+}
+
+.signupButton {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.link {
+    text-decoration: none;
+    color: inherit;
+}
+
+@media(max-width: 1024px){
+    .authButtons {
+        display: flex;
+        gap: 15px;
+        margin-top: -40px;
+        border-radius: 40px;
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .mainSection,
+    .revenueSection,
+    .testimonialContent {
+      flex-direction: column;
+      text-align: center;
+      padding: 30px;
+    }
+ 
+    .textContent,
+    .analyticsSection,
+    .revenueImageContainer,
+    .revenueDescription,
+    .testimonialLeft,
+    .testimonialRight {
+      max-width: 100%;
+      align-items: center;
+      text-align: center;
+    }
+ 
+    .analyticsImg,
+    .revenueImg,
+    .customerImage {
+      max-width: 80%;
+    }
+ 
+    .testimonialGrid {
+      grid-template-columns: 1fr;
+    }
+  }
+ 
+  /* Medium Screens (Up to 768px) */
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      text-align: center;
+    }
+ 
+    .logo {
+      width: 80px;
+    }
+ 
+    .signupButton {
+      width: 100%;
+      max-width: 200px;
+    }
+ 
+    .mainSection,
+    .revenueSection,
+    .testimonialContent {
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+ 
+    .textContent,
+    .analyticsSection,
+    .revenueImageContainer,
+    .revenueDescription,
+    .testimonialLeft,
+    .testimonialRight {
+      max-width: 100%;
+      align-items: center;
+    }
+ 
+    .analyticsImg,
+    .revenueImg,
+    .customerImage {
+      max-width: 90%;
+    }
+ 
+    .testimonialGrid {
+      grid-template-columns: 1fr;
+    }
+  }
+ 
+  /* Small Screens (Up to 500px) */
+  @media (max-width: 500px) {
+    .header {
+      flex-direction: column;
+      text-align: center;
+    }
+ 
+    .mainHeading {
+      font-size: 2rem;
+    }
+ 
+    .subheading {
+      font-size: 1rem;
+    }
+ 
+    .ctaButton {
+      width: 100%;
+      max-width: 180px;
+    }
+ 
+    .footerdiv {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+ 
+    .footerLinks {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+ 
+  /* Extra Small Screens (Up to 300px) */
+  @media (max-width: 300px) {
+    .header {
+      padding: 10px;
+    }
+ 
+    .logo {
+      width: 60px;
+    }
+ 
+    .signupButton {
+      padding: 8px 16px;
+      font-size: 12px;
+    }
+ 
+    .mainHeading {
+      font-size: 1.8rem;
+    }
+ 
+    .subheading {
+      font-size: 0.9rem;
+    }
+ 
+    .ctaButton {
+      font-size: 14px;
+    }
+ 
+    .footerdiv {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+  }
+    /* Responsive layout for small and med... by Pavan Kalyan, Sivalingam
+Pavan Kalyan, Sivalingam
+ 
+  /* Responsive layout for small and medium devices */
+  @media (max-width: 768px) {
+    .footerGrid {
+      display: block;
+     
+    }
+    .footerItem {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+ 
+  .header, .mainSection, .revenueSection, .bodyContent, .testimonialsSection {
+    margin-bottom: 30px;
+  }
+ 
+
