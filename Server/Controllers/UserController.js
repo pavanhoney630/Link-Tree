@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 
 
 const Base_URL = process.env.NODE_ENV === 'production' 
-  ? '' // Replace with your actual production URL
+  ? ' https://link-tree-auth.vercel.app'
   : `${req.protocol}://${req.get('host')}`;
 
 const createOrUpdateUserProfile = async (req, res) => {

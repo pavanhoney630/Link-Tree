@@ -63,7 +63,7 @@ const userProfileSchema = new mongoose.Schema(
     links: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Link", // Reference to the Link model
+        ref: Link , // Reference to the Link model
       }
     ],
     createdAt: {
