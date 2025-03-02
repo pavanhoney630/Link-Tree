@@ -7,6 +7,7 @@ const LinkSchema = new mongoose.Schema(
     url: { type: String, required: true }, // Link URL
     logo: { type: String, required: true }, // Application logo (e.g., YouTube, Facebook)
     clicks: { type: Number, default: 0 }, // Click count
+    visible: { type: Boolean, default: true } // ✅ Ensure visible is true by default
   },
   { timestamps: true }
 );

@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=DM+Sans&family=Roboto&family=Open+Sans&family=Montserrat&family=Lato&family=Raleway&family=Inter&display=swap");
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1, h2 {
+    font-weight: 700; /* Bold */
+}
+
+p, span {
+    font-weight: 400; /* Regular */
+}
+
+.button {
+    font-weight: 500; /* Medium */
+}

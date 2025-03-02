@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    min-height: 100vh; /* Ensure full height */
+    padding: 20px; /* Add spacing */
+}
+
+.mainContent {
+    flex: 1;
+    padding: 20px; /* Add space around content */
+}

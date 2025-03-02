@@ -1,0 +1,380 @@
+.linkList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  .linkItem {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    flex-wrap: wrap;
+  }
+  
+  .linkItem:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  .reorderIcon {
+    cursor: grab;
+    padding: 3px;
+    margin-right: 10px;
+  }
+  
+  .linkDetails {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow: hidden;
+  }
+  
+  .linkTitle {
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    width: 100%; /* Ensure it adapts dynamically */
+  }
+  
+ 
+  .linkTitle,
+.editableTitle a {
+  text-decoration: none !important; /* Forcefully remove underline */
+}
+  .linkUrlContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .linkUrl {
+
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        color: grey;
+      
+  }
+  
+  .editIcon {
+    color: grey;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .editIcon:hover {
+    color: #0056b3;
+  }
+  
+  .clickTracker {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: grey;
+    gap: 5px;
+  }
+  
+  .barChartIcon {
+    width: 16px;
+    height: 16px;
+    color: grey;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    margin-left: auto; /* Adjust spacing */
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 20px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #4caf50;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(20px);
+  }
+  
+  .disabledLink {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .disabled {
+    background-color: #f5f5f5;
+  }
+  
+  .deleteIcon {
+    margin-left: 230px;
+    cursor: pointer;
+    color: grey;
+    
+  }
+  
+  .deleteIcon:hover {
+    color: #a71d2a;
+  }
+  .logoTitleContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between logo and title */
+  }
+  
+  .linkLogo {
+    width: 24px; /* Adjust as needed */
+    height: 24px;
+    object-fit: contain;
+  }
+  /* Default: Stack Layout */
+.linkList.stack {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 10px;
+  scroll-behavior: smooth;
+}
+.linkList.stack .linkItem {
+  min-width: 200px;
+  flex: 0 0 auto;
+}
+.linkList.stack .linkLogo{
+  background-color: #f5f5f5;
+  padding: 0px;
+  border-radius: 100px;
+  width: 35px;
+}
+.linkList.stack .linkItem{
+  background: #C9C9C9; /* Background color */
+  border-radius: 40px;
+  
+}
+.linkList.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(90px, 1fr)); /* Responsive grid */
+  gap: 10px;
+  justify-content: center;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.linkList.grid .linkItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  background: #C9C9C9; /* Background color */
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position: relative; /* For positioning the reorder icon */
+  box-sizing: border-box;
+}
+
+/* Reorder icon styling */
+.linkList.grid .reorderIcon {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  cursor: move; /* Indicates the element is draggable */
+}
+
+/* Logo and title container */
+.linkList.grid .logoTitleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px; /* Adjust as needed */
+}
+
+/* Logo styling */
+.linkList.grid .linkLogo {
+  width: 50px; /* Adjust as needed */
+  height: 50px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* Makes it circular */
+  margin-bottom: 8px; /* Space between logo and text */
+  padding: 10px;
+}
+
+/* Logo image inside the white background */
+.linkList.grid .linkLogo img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* Title styling */
+.linkList.grid .linkTitle,
+.linkList.grid .editableTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: black;
+  text-align: center;
+  margin: 0;
+}
+
+/* Disabled link styling */
+.linkList.grid .disabledLink {
+  color: gray;
+  pointer-events: none;
+}
+
+.linkItem {
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+}
+
+/* Adjust linkItem styles for Grid and Carousel */
+.linkList.grid .linkItem {
+  text-align: center;
+}
+.linkList.carousel {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap; /* Ensure items stay in a single row */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  gap: 10px; /* Space between items */
+  scroll-behavior: smooth; /* Smooth scrolling */
+  padding: 10px; /* Add padding to the container */
+  width: 100%; /* Ensure the carousel takes full width */
+  box-sizing: border-box; /* Include padding in width calculation */
+  max-width: 17vw;
+  margin: 25px auto;
+  white-space: nowrap;
+}
+
+.linkList.carousel .linkItem {
+  min-width: 120px; /* Set a minimum width for each item */
+  flex: 0 0 auto; /* Prevent items from shrinking or growing */
+  background-color: #C9C9C9; /* Background color */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  padding: 12px; /* Padding inside each item */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+/* Logo styling */
+.linkList.carousel .linkLogo {
+  width: 50px; /* Adjust as needed */
+  height: 50px;
+  background: white; /* White background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* Makes it circular */
+  margin-bottom: 5px; /* Space between logo and text */
+  padding: 8px; /* Add padding to increase white background area */
+  flex-shrink: 0;
+}
+
+/* Logo image inside the white background */
+.linkList.carousel .linkLogo img {
+  width: 24px;
+  height: 2px;
+  object-fit: contain; /* Ensure the image fits properly */
+}
+
+/* Title styling */
+.linkList.carousel .linkTitle,
+.linkList.carousel .editableTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: black;
+  text-align: center;
+  margin-top: 4px; /* Remove default margin */
+}
+
+/* Disabled link styling */
+.linkList.carousel .disabledLink {
+  color: gray;
+  pointer-events: none;
+}
+/* Scrollbar styling (optional for mobile) */
+.linkList.carousel::-webkit-scrollbar {
+ 
+  display: none;
+}
+
+.linkList.carousel::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+  /* Responsive */
+  @media (max-width: 768px) {
+    .linkItem {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 15px;
+    }
+  
+    .reorderIcon {
+      margin-bottom: 8px;
+    }
+  
+    .clickTracker {
+      margin: 5px 0;
+    }
+  
+    .toggleSwitch {
+      margin: 5px 0;
+    }
+  
+    .deleteIcon {
+      align-self: flex-end;
+    }
+  
+    .linkUrl {
+      max-width: 100%; /* Ensuring full visibility on mobile */
+    }
+  }

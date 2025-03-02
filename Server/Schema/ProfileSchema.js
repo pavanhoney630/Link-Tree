@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 // Reference to the Link Schema
 const Link = require("../Schema/LinkSchema");  // Adjust the path as needed
+const Product = require("../Schema/ShopSchema")
 
 const userProfileSchema = new mongoose.Schema(
   {
@@ -48,12 +49,12 @@ const userProfileSchema = new mongoose.Schema(
     },
     layout: {
       type: String,
-      enum: ['grid', 'list'],
+      enum: ['grid', 'stack','carousel'],
       default: 'grid',
     },
     theme: {
       type: String,
-      enum: ['Air Snow', 'Air Grey', 'Air Smoke', 'Air Black', 'Mineral Blue', 'Mineral Green', 'Mineral Orange'],
+      enum: ['Air Snow', 'Air Grey', 'Air Smoke', 'Air Black', 'Mineral Blue', 'Mineral Green', 'Mineral Orange','Mineral Yellow'],
       default: 'Air Snow',
     },
     clickCount: {
@@ -64,6 +65,12 @@ const userProfileSchema = new mongoose.Schema(
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: Link , // Reference to the Link model
+      }
+    ],
+    shopLinks: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: Product, // Reference to the ShopLink model
       }
     ],
     createdAt: {

@@ -116,7 +116,7 @@ const setUsername = async (req, res) => {
         message: "Login successful",
         token: token,  // Include the generated JWT token
         user: {
-          id: user._id,
+          _id: user._id,
           firstName: user.firstName,
           lastName: user.lastName,
           email: user.email,  // Include email in the response for user info

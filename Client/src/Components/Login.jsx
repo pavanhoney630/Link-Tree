@@ -24,12 +24,25 @@ const Login = () => {
         username,
         password,
       });
-      console.log(response.data);
-      // Handle successful login (e.g., store token, redirect)
+  
+      // Extract token and username from response
+      const { token, user } = response.data;
+  
+      // Store in localStorage
+      localStorage.setItem("token", token);
+      localStorage.setItem("username", user.username);
+      localStorage.setItem("userId",user._id)
+  
+      console.log("Login successful!");
+  
+      // Redirect or reload the page (optional)
+      window.location.href = "/links";  // Redirect to the Links page after login
+  
     } catch (err) {
-      setError(err.response.data.message);
+      setError(err.response?.data?.message || "Login failed");
     }
   };
+  
 
   return (
     <div className={styles.loginContainer}>

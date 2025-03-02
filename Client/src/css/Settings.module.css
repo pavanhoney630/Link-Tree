@@ -1,0 +1,126 @@
+/* Container */
+.container {
+    display: flex;
+    height: 100vh;
+    background-color: #f7f7f7;
+}
+
+/* Sidebar */
+.settingsPageSidebar {
+    width: 250px;
+    background: white;
+    border-right: 1px solid #ddd;
+}
+
+/* Main Content Wrapper */
+.mainContentWrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 250px; /* Adjust for sidebar width */
+}
+
+/* Header */
+.settingsPageHeader {
+    padding: 20px;
+    
+    width: calc(100% - 250px); /* Adjust width to account for sidebar */
+    position: fixed; /* Fix header position */
+    top: 0; /* Align to the top */
+    left: 250px; /* Move header to the right of the sidebar */
+    z-index: 1000; /* Ensure header is above other content */
+}
+
+/* Main Content */
+.mainContent {
+    flex: 1;
+    width: calc(100% - 250px); /* Adjust width to account for sidebar */
+    display: flex;
+    padding: 40px;
+    justify-content: flex-start; /* Align to the left */
+    align-items: flex-start; /* Align to the top */
+    margin-top: 80px; /* Adjust margin to account for fixed header */
+}
+
+/* Profile Section */
+.profileSection {
+    background: white;
+    padding: 15px; /* Further reduced padding */
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 500px; /* Increased width */
+    height: auto; /* Adjust height automatically */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    position: relative;
+    margin-left: -50px; /* Move it slightly to the left */
+}
+
+/* Title */
+.profileSection h3 {
+    margin-bottom: 5px;
+    font-size: 15px; /* Reduced font size */
+    font-weight: 400;
+    margin-left: 5px;
+    color: #29A263;
+}
+
+/* Divider */
+.divider {
+    border: 0;
+    height: 2px; /* Adjust thickness */
+    width: 100%; /* Full width */
+    margin: 6px 0;
+    background: linear-gradient(to right, #28a745 10%, #bbb 20%); 
+}
+
+/* Form */
+.profileForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Form Group */
+.formGroup {
+    margin-bottom: 8px; /* Further reduced margin */
+    width: 100%;
+}
+
+.formGroup label {
+    font-size: 13px; /* Reduced font size */
+    font-weight: 300;
+    color: #5E5E5E;
+    margin-bottom: 3px; /* Reduced margin */
+    opacity: 100%;
+    display: block;
+}
+
+.formGroup input {
+    width: calc(100% - 20px); /* Adjusted width */
+    padding: 5px; /* Reduced padding */
+    font-size: 13px; /* Reduced font size */
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Reduced border radius */
+}
+
+/* Save Button */
+.saveButton {
+    padding: 6px 42px; /* Further reduced padding */
+    font-size: 13px; /* Reduced font size */
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: absolute;
+    bottom: 20px; /* Position at the bottom */
+    right: 20px; /* Position at the right */
+}
+
+.saveButton:hover {
+    background-color: #218838;
+}

@@ -1,0 +1,79 @@
+/* Sidebar container */
+.sidebar {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 90vh; /* Ensures proper height */
+    width: 250px; /* Adjust width if needed */
+    min-width: 250px; /* Prevents shrinking */
+}
+.logo {
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+    display: block;
+  }
+  
+  .logo img {
+    width: 100%; /* Ensures image scales properly */
+    height: auto;
+    object-fit: contain;
+  }
+
+.sidelogo{
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+}
+  
+  
+/* Navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px; /* Adjust margin to prevent overlap */
+}
+
+/* Default NavLink */
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    padding: 12px 25px; /* Increased left & right padding */
+    display: block;
+    width: 100%; /* Makes sure the background extends fully */
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Active link */
+nav ul li a.active {
+    background-color: #D9D9D9; /* Match sidebar */
+    color: #2c8c50; /* Green text */
+    font-weight: bold;
+    padding-left: 30px;  
+    padding-right: 30px;
+    width: calc(100% + 40px); /* Extends beyond li */
+    margin-left: -20px; /* Extend background beyond li */
+    margin-right: -20px; /* Extend background beyond li */
+}
+/* User Profile in Sidebar */
+.userProfile {
+    margin-top: auto; /* Pushes it to the bottom */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.profileImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.profileName {
+    font-size: 14px;
+    font-weight: bold;
+}

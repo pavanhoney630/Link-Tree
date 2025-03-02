@@ -1,0 +1,445 @@
+/* Container Layout */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.appearanceContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+/* Mobile Preview */
+.mobilePreview {
+  display: flex;
+  justify-content: left;
+  margin-left: 60px;
+  border-radius: 40px
+}
+
+.previewCard {
+  width: 250px;
+  height: 450px;
+  
+  border: 8px solid black;
+  border-radius: 35px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Preview Header */
+.previewHeader {
+  width: 115%;
+  height: 135px;
+  background: #342b26;
+  border-top-left-radius: 28px;
+  border-top-right-radius: 28px;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  padding-bottom: 20px;
+  text-align: center;
+  top: -4.0%;
+}
+
+.previewShareButton {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: white;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  padding: 6px 8px;
+  border: none;
+}
+
+.mobilepreviewProfile {
+  position: absolute;
+  top: 55px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+.previewHeader h3 {
+  position: absolute;
+  top: 95px;
+  color: white;
+  font-size: 16px;
+}
+
+/* Tabs for Links/Shop */
+.previewButtons {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  margin-top: -4px;
+  background: #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.previewButtons button {
+  width: 50%;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.previewButtons .activeButton {
+  background: green;
+  color: white;
+}
+
+.previewButtons .inactiveButton {
+  background: gray;
+  color: white;
+}
+
+/* Links Scroll Container */
+.linksScrollContainer {
+  max-height: 150px;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.linksScrollContainer::-webkit-scrollbar {
+  display: none;
+}
+
+/* Get Connected Button */
+.getConnected {
+  position: absolute;
+  bottom: 60px;
+  width: 85%;
+  background: green;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+
+/* Spark Logo */
+.sparkImg {
+  position: absolute;
+  bottom: 15px;
+  width: 80px;
+}
+
+.h3 {
+  margin-top: -1px;
+ margin-left: 50px;
+  color: black;
+}
+h4{
+  color: #333 ;
+ font-weight: 20;
+ font-size: 14px;
+ margin-left: -8px;
+
+}
+
+.layoutSection{
+  margin-left: 70px;
+  margin-top: -20px;
+}
+.saveButton {
+  align-self: center;
+  width: 150px;
+  padding: 12px;
+  background-color: forestgreen;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+  position: absolute;
+  right: 150px;
+  bottom:-145%;
+}
+
+.saveButton:hover {
+  background-color: #333;
+}
+
+/* Layout Section */
+.layoutSection {
+  background-color: #f8f8f8;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 60%;
+  margin-top: 25px;
+}
+
+/* Layout Options */
+.layoutOptions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+.layoutButton {
+  background: transparent;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 85px;
+}
+
+.layoutButton img {
+  width: 60px;
+  height: 60px;
+}
+
+.layoutButton h4 {
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.selected {
+  background-color: #ddd;
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+}
+
+/* Button Style Section */
+.buttonStyleSection {
+  margin-top: 20px;
+  background-color: #f8f8f8;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  width: 60%;
+  margin-left: 70px;
+}
+
+.buttonStyleGroup {
+  margin-bottom: 20px;
+}
+
+.buttonStyleGroup h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.buttonOptions {
+  display: flex;
+  gap: 10px;
+}
+
+.buttonOption {
+  width: 90px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.buttonOption.selected {
+  transform: scale(1.1);
+  border: 2px solid #007bff;
+}
+.colorPickerContainer {
+  margin-top: 20px;
+}
+
+.colorPickerContainer h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.colorPreview {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+.hexCodeContainer {
+  width: 80px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  text-align: center;
+  color: #888;
+  margin-right: 10px;
+}
+
+.colorPicker {
+  opacity: 0;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+/* Fonts Section Styles */
+.fontSection {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  width: 60%;
+  margin-left: 70px;
+}
+
+.fontSection h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.fontContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fontPreviewDropdown {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+  background-color: #f9f9f9;
+}
+
+.fontPreview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.fontPreviewText {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.fontDropdown {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: transparent;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+}
+/* Theme Section Styles */
+.themeSection {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  width: 60%;
+  margin-left: 70px;
+  
+}
+
+.themeSection h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: -30px;
+  color: #333;
+  margin-left: -20px;
+}
+
+.themeOptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  height: 250px;
+  
+}
+
+.themeOption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  height:150px ;
+}
+
+.themeOption:hover {
+  transform: scale(1.05);
+}
+
+.themeOption.selected {
+  border: 2px solid #000;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.themePreview {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  border: 1px solid #999;
+}
+
+.themeOption span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+}
