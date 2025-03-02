@@ -56,7 +56,7 @@ router.get("/:linkId/click", async (req, res) => {
   
       let link = await Link.findById(id);
       if (!link) {
-        console.log(`❌ Link not found: ${id}`);
+        
         return res.status(404).json({ success: false, message: "Link not found!" });
       }
   
