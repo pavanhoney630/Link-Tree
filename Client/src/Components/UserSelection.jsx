@@ -2,19 +2,60 @@ import React, { useState } from 'react';
 import styles from '../css/UserSelection.module.css';
 import SparkImg from '../assets/SparkImg.png'; // Update the path to your Spark logo
 import SignupImage from '../assets/SignupImage.png'; // Update the path to your Signup image
+import { useNavigate } from "react-router-dom"; // Import useNavigate
+
+const BASE_URL =
+  import.meta.env.MODE === "development"
+    ? import.meta.env.VITE_DEV_URL
+    : import.meta.env.VITE_PROD_URL;
 
 const UserSelection = () => {
+    const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('');
 
-    const handleContinue = (e) => {
+    const handleContinue = async (e) => {
         e.preventDefault();
-        // Store username and selected category in local storage
-        localStorage.setItem('username', username);
-        localStorage.setItem('selectedCategory', selectedCategory);
-        // Redirect or perform further actions as needed
+    
+        // Get tempToken from localStorage
+        const tempToken = localStorage.getItem("tempToken");
+    
+        if (!tempToken) {
+            console.error("No temp token found. Please sign up first.");
+            return;
+        }
+    
+        localStorage.setItem("username", username);
+        localStorage.setItem("selectedCategory", selectedCategory);
+    
+        try {
+            const response = await fetch(`${BASE_URL}/auth/username`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${tempToken}`, // Send token in headers
+                },
+                body: JSON.stringify({ username }),
+            });
+    
+            const data = await response.json();
+    
+            if (response.ok) {
+                console.log(data.message); // Log success response
+    
+                // Store the main token (if provided)
+                if (data.token) {
+                    localStorage.setItem("token", data.token);
+                }
+                navigate('/login')
+            } else {
+                console.error("Failed to set username:", data.message);
+            }
+        } catch (error) {
+            console.error("Error storing username:", error);
+        }
     };
-
+    
     return (
         <div className={styles.userSelectionContainer}>
         <div className={styles.leftSection}>

@@ -67,14 +67,24 @@ const Signup = () => {
 
     try {
       const response = await axios.post(`${BASE_URL}/auth/signup`, formData);
-      toast.success(response.data.message, { position: "top-right" }); // Green toast
+
+      // Extract the temp token from the response
+      const { message, token, id } = response.data;
+
+      // Store temp token & user ID in localStorage
+      localStorage.setItem("tempToken", token);
+      localStorage.setItem("userId", id);
+
+      toast.success(message, { position: "top-right" }); // Green toast
+
       setTimeout(() => navigate("/user"), 2000); // Redirect after 2s
     } catch (err) {
       const errorMsg = err.response?.data?.message || "Something went wrong";
       setErrors({ general: errorMsg });
       toast.error(errorMsg, { position: "top-right" }); // Red toast
     }
-  };
+};
+
 
   return (
     <div className={styles.container}>
